@@ -3,9 +3,15 @@ import com.codecool.freestyle.mesolo.Vehicle;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Simple test class
+ * @author Bence Gál
+ */
 public class test {
 
+    /**
+     * Tests if setCar() works and getters returns values as expected
+     */
     @Test
     public void checkSetCarAndGetters(){
         Car car1 = new Car();
