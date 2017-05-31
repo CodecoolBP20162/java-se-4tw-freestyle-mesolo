@@ -35,6 +35,7 @@ public class Car extends Vehicle{
         Car porsche911 = new Car();
         Car porscheBoxster = new Car();
         Car mercedesG300 = new Car();
+        Car newCar = new Car();
 
         List carList = new ArrayList();
 
@@ -55,6 +56,8 @@ public class Car extends Vehicle{
         if(mercedesG300.getNumOfAvailable()>0){
             mercedesG300.setAvailable(true);
         }
+
+        newCar.setCar("newCar for overload",2017,999999);
 
         /*
         Stacking examples and demonstraiton

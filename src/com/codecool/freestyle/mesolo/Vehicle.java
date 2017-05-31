@@ -16,8 +16,27 @@ public abstract class Vehicle implements VehicleInterface{
     private int lastTimeServiced;
     private int status;
     private boolean serviceNeeded;
+    private int yearReleased;
+    private int Price;
 
     //getters setters
+
+
+    public int getYearReleased() {
+        return yearReleased;
+    }
+
+    public void setYearReleased(int yearReleased) {
+        this.yearReleased = yearReleased;
+    }
+
+    public int getPrice() {
+        return Price;
+    }
+
+    public void setPrice(int price) {
+        Price = price;
+    }
 
     public boolean isServiceNeeded() {
         return serviceNeeded;
@@ -101,7 +120,19 @@ public abstract class Vehicle implements VehicleInterface{
         this.lastTimeServiced = lastTimeServiced;
         this.numOfAvailable = numOfAvailable;
         this.status = status;
+    }
+    //Method overloading
 
+    /**
+     *
+     * @param modelName name of the model
+     * @param yearReleased year the car has been released
+     * @param Price price the car selling
+     */
+    public void setCar(String modelName, int yearReleased, int Price){
+        this.modelName = modelName;
+        this.yearReleased = yearReleased;
+        this.Price = Price;
     }
 
     /**

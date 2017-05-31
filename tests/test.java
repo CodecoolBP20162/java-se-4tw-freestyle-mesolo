@@ -25,4 +25,16 @@ public class test {
         assertEquals(car1.getNumOfAvailable(), 5);
         assertEquals(car1.getStatus(), 6);
     }
+
+    /**
+     * Tests if setCar() overloaded version works as expected
+     */
+    @Test
+    public void chechSetCarOverloaded(){
+        Car car2 = new Car();
+        car2.setCar("car2ModelName", 2017,111);
+        assertEquals(car2.getModelName(), "car2ModelName");
+        assertEquals(car2.getYearReleased(), 2017);
+        assertEquals(car2.getPrice(), 111);
+    }
 }
