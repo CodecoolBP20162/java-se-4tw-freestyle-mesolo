@@ -1,9 +1,13 @@
 package com.codecool.freestyle.mesolo;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Stack;
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+import javax.xml.soap.Node;
 
 
 /**
@@ -14,9 +18,18 @@ import org.slf4j.LoggerFactory;
 
 public class Car extends Vehicle{
 
+    private String[] stackArray;
+    private int stackSize;
+    private int topOfStack = -1;
+
+
+
     public static void main(String[] args) {
 
          //final Logger logger = LoggerFactory.getLogger(Car.class);
+
+        carStack carStack = new carStack(10);
+
 
 
         Car porsche911 = new Car();
@@ -24,7 +37,6 @@ public class Car extends Vehicle{
         Car mercedesG300 = new Car();
 
         List carList = new ArrayList();
-
 
 
         //Porsche 911
@@ -43,12 +55,28 @@ public class Car extends Vehicle{
         if(mercedesG300.getNumOfAvailable()>0){
             mercedesG300.setAvailable(true);
         }
-        carList.add(porsche911.getModelName());
-        carList.add(porscheBoxster.getModelName());
-        carList.add(mercedesG300.getModelName());
 
-        porsche911.printCar();
-        porscheBoxster.printCar();
-        mercedesG300.printCar();
+        /*
+        Stacking examples and demonstraiton
+         */
+
+        //Adding 3 cars to the stack
+        carStack.push(porsche911.getModelName());
+        carStack.push(porscheBoxster.getModelName());
+        carStack.push(mercedesG300.getModelName());
+        //Asking for the top one
+        System.out.println(carStack.peek());
+        //Popping the top one
+        carStack.pop();
+        //Asking for the top one
+        System.out.println(carStack.peek());
+        //Popping the top one
+        carStack.pop();
+        //Asking for the top one
+        System.out.println(carStack.peek());
+        //Pushing a random string
+        carStack.push("kutya");
+        //Asking for the top one
+        System.out.println(carStack.peek());
     }
 }

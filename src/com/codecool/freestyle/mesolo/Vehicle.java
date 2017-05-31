@@ -4,7 +4,7 @@ package com.codecool.freestyle.mesolo;
  *
  */
 
-public abstract class Vehicle {
+public abstract class Vehicle implements VehicleInterface{
 
 
 
